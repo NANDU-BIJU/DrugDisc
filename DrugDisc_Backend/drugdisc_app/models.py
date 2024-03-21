@@ -37,10 +37,12 @@ from django.db import models
 
 class InputData(models.Model):
     compound_name = models.CharField(max_length=100)
-    smiles_notation = models.CharField(max_length=255)
+    smiles_notation_protein = models.CharField(max_length=255)
+    smiles_notation_drug = models.CharField(max_length=255)
     atomic_weight = models.FloatField()
     physicochemical_property = models.CharField(max_length=255)
     structural_property = models.CharField(max_length=255)
+    alternate_drug=models.CharField(max_length=500)
     # Add more fields as needed
 
     def __str__(self):
